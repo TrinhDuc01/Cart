@@ -13,7 +13,7 @@ import DetailProduct from './DetailProduct';
 export default function Nav() {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-light fs-4">
                 <img src={logo} className="App-logo" alt="logo" />
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
