@@ -9,6 +9,7 @@ import {
 import Home from './Home';
 import Cart from './Cart';
 import ListProduct from './ListProduct';
+import DetailProduct from './DetailProduct';
 export default function Nav() {
     return (
         <>
@@ -32,6 +33,7 @@ export default function Nav() {
                 <Route path='/' Component={Home}></Route>
                 <Route path='/Cart' Component={Cart}></Route>
                 <Route path='/ProductList' Component={ListProduct}>ListProduct</Route>
+                <Route path='/DetailProduct' Component={DetailProduct}>ListProduct</Route>
             </Routes>
         </>
 

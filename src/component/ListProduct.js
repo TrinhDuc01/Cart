@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import Card from './Card';
+import { Context } from '../Context/ContextFirst';
 
 export default function ListProduct() {
-    const [ListProduct, setListProduct] = useState([]);
-    useEffect(() => {
-        fetch('https://dummyjson.com/products')
-            .then(data => data.json())
-            .then(data => setListProduct(data.products))
-    }, [])
-
+    const {listProduct, handleCart, handleDetailProduct} = useContext(Context)
+    // console.log(useContext(Context))
+    console.log('list')
     return (
-        <div className='row justify-content-around'>{ListProduct.map((element) => (
-            <Card key={element.id} info={element} />
+        <div className='row justify-content-around'>{listProduct.map((element) => (
+            <Card key={element.id} info={element} handleCart={handleCart} handleDetailProduct={handleDetailProduct}/>
         ))}</div>
     )
 }
