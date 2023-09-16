@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../logo.svg';
 import '../App.css';
 import {
@@ -10,25 +10,32 @@ import Home from './Home';
 import Cart from './Cart';
 import ListProduct from './ListProduct';
 import DetailProduct from './DetailProduct';
-export default function Nav() {
+function Nav() {
+    const [toggle, setToggle] = useState(false);
+    const handleToggle = () =>{
+        setToggle(prev => !prev)
+    }
+    const handleToggleLink = () =>{
+        setToggle(false)
+    }
     return (
         <>
-            <header class="navbar navbar-expand-lg navbar-light bg-light fs-4 fixed-top">
-                <div class="container-fluid">
+            <header className="navbar navbar-expand-lg navbar-light bg-light fs-4 fixed-top">
+                <div className="container-fluid">
                     <Link className="nav-link" to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <button className="navbar-toggler" onClick={handleToggle} type="button" >
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <Link className="nav-link" to="/">Home</Link>
+                    <div className={toggle?"collapse show navbar-collapse":"collapse navbar-collapse"} id="navbarSupportedContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li className="nav-item">
+                                <Link className="nav-link" onClick={handleToggleLink} to="/">Home</Link>
                             </li>
-                            <li class="nav-item">
-                                <Link className="nav-link" to="/ProductList">ProductList</Link>
+                            <li className="nav-item">
+                                <Link className="nav-link" onClick={handleToggleLink} to="/ProductList">ProductList</Link>
                             </li>
-                            <li class="nav-item">
-                                <Link className="nav-link" to="/Cart">Cart</Link>
+                            <li className="nav-item">
+                                <Link className="nav-link"  onClick={handleToggleLink} to="/Cart">Cart</Link>
                             </li>
                         </ul>
                     </div>
@@ -44,3 +51,4 @@ export default function Nav() {
 
     )
 }
+export default Nav;

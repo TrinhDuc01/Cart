@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React, { memo, useContext } from 'react'
 import Card from './Card';
 import { Context } from '../Context/ContextFirst';
 
 
-export default function ListProduct() {
+function ListProduct() {
     const { listProduct, handleCart, handleDetailProduct } = useContext(Context)
     // console.log(useContext(Context))
     console.log('list')
@@ -16,3 +16,5 @@ export default function ListProduct() {
         </div>
     )
 }
+
+export default memo(ListProduct);

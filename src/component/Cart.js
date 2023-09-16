@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import React, { memo, useContext } from 'react'
 import { Context } from '../Context/ContextFirst'
 
-export default function Cart() {
+function Cart() {
     const { cart, total, handleOrder} = useContext(Context)
     console.log('cart')
     
@@ -12,7 +12,7 @@ export default function Cart() {
                     Cart Empty
                 </div>
                 : cart.map((ele) => (
-                    <div className="card">
+                    <div key={ele.id} className="card">
                         <div className="card-header">
                             <div className="card-body">
                                 <h5 className="card-title">{ele.title}</h5>
@@ -33,3 +33,5 @@ export default function Cart() {
         </div>
     )
 }
+
+export default memo(Cart)

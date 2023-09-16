@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useCallback, useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 const Context = createContext();
 
@@ -53,7 +53,7 @@ function ContextFirst({ children }) {
                 ...find[0],
                 quantity: 1
             }
-            console.log(productCart)
+            // console.log(productCart)
             setCart(prev => [
                 ...prev,
                 productCart
@@ -71,6 +71,7 @@ function ContextFirst({ children }) {
         })
         setDetail(find[0]);
     }
+
     //Set cart sau khi đặt hàng
     const handleOrder = () => {
         setCart([]);
