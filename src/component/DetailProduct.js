@@ -17,8 +17,8 @@ export default function DetailProduct() {
     return (
         <>
             {isEmpty(detail) ? navigate('/ProductList') :
-            <div className='container row my-5 mx-3 shadow p-3 mb-5 bg-body rounded'>
-                <div className='col-4'>
+            <div className='row m-3 m-md-5 shadow p-3 mb-5 bg-body rounded'>
+                <div className='col-md-4'>
                     <div id="carouselExampleControls" class="carousel slide carousel-dark " data-bs-ride="carousel">
                         <div class="carousel-inner">
                             {detail.images.map((ele => (
@@ -37,8 +37,8 @@ export default function DetailProduct() {
                         </button>
                     </div>
                 </div>
-                <div className='col-1'></div>
-                <div className='col-7'>
+                <div className='col-md-1'></div>
+                <div className='col-md-7 mt-2'>
                     <h5 className="card-title fw-bold fs-2">{detail.title}</h5>
                     <ReactStars
                         count={5}

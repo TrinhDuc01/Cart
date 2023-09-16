@@ -6,7 +6,7 @@ export default function Cart() {
     console.log('cart')
     
     return (
-        <div className='mt-2'>
+        <div className='container mt-2'>
             {cart.length === 0 ?
                 <div className='text-center fs-1 font-monospace'>
                     Cart Empty

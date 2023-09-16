@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function Card(props) {
     // console.log('Card')
     return (
-        <div className="card border-0 col-3 px-4 py-3 m-5 shadow p-3 mb-5 bg-body rounded">
+        <div className="card border-0 col-10 col-md-8 col-lg-3 col m-4 p-3 shadow mb-5 bg-body rounded">
             <img src={props.info.thumbnail} style={{ maxHeight: 200, minHeight: 200 }} className="img-responsive card-img" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">{props.info.title}</h5>

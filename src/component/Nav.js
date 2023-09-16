@@ -13,22 +13,27 @@ import DetailProduct from './DetailProduct';
 export default function Nav() {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light fs-4">
-                <img src={logo} className="App-logo" alt="logo" />
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/">Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/ProductList">ProductList</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/Cart">Cart</Link>
-                        </li>
-                    </ul>
+            <header class="navbar navbar-expand-lg navbar-light bg-light fs-4 fixed-top">
+                <div class="container-fluid">
+                    <Link className="nav-link" to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <Link className="nav-link" to="/">Home</Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link className="nav-link" to="/ProductList">ProductList</Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link className="nav-link" to="/Cart">Cart</Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </nav>
+            </header>
             <Routes>
                 <Route path='/' Component={Home}></Route>
                 <Route path='/Cart' Component={Cart}></Route>
