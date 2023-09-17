@@ -1,10 +1,8 @@
 import React, { memo, useContext } from 'react'
 import { Context } from '../Context/ContextFirst'
 import ReactStars from 'react-rating-stars-component'
-import { useNavigate } from 'react-router-dom';
 function DetailProduct() {
     const { detail, handleCart } = useContext(Context);
-    let navigate = useNavigate();
     console.log('rerender')
     function isEmpty(obj) {
         for (const prop in obj) {
@@ -16,7 +14,7 @@ function DetailProduct() {
     }
     return (
         <>
-            {isEmpty(detail) ? navigate('/ProductList') :
+            {isEmpty(detail) ? '' :
             <div className='row m-3 m-md-5 shadow p-3 mb-5 bg-body rounded'>
                 <div className='col-md-4'>
                     <div id="carouselExampleControls" className="carousel slide carousel-dark " data-bs-ride="carousel">
